@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    
+
+    <title>Software by M. Sharpless</title>
+
+    <meta name="author" content="M. Sharpless" />
+    <meta name="description" content="A collection of software written by M. Sharpless" />
+    <meta name="keywords" content="" />
+    <meta name="generator" content="ARKWEB 0.3.17" />
+
+    <link href="/aw/site.css" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Josefin Sans|Josefin Slab|Alegreya" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+    <div class="page">
+
+<div class="frontis">
+  <div class="top">
+    <img class="bowler" src="/aw/images/bowler2.png" />
+    <p class="code">
+      @spec.get_opts.each do |name, opt|
+        options[name] = opt.value
+        counts[name]  = opt.count
+      end
+      @spec.get_args.each do |name, arg|
+        args &lt;&lt; arg.value
+        named[name] = arg.value
+      end
+      args.flatten!
+      args += trailing
+      @report = Report.new(args, named, trailing, options, counts)
+      if @report.opt(:help)
+        self.print_usage()
+      end
+      unless @spec.get_args.values.all? {|arg| arg.fulfilled? }
+        raise InterfaceError, "Required argument '#{name.upcase}' was not given."
+      end
+      if @spec.trailing_error &amp;&amp; !@report.trailing.empty?
+        raise InterfaceError, "Error: got trailing argument(s): #{trailing.join
+    </p>
+  </div>
+  <div class="bottom">
+    <h1 class="title">
+      <span class="software">Software</span><br/>
+      <span class="byline">by</span>
+      <span class="name">M. Sharpless</span>
+    </h1>
+    <div class="prompt">
+      <span class="money">nn:~$</span>
+      <div class="cursor"></div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <img class="rule" src="/aw/images/dash-4.png" />
+
+  <div class="software-lists">
+  <div class="software-list">
+    <h2 class="list-heading">Ruby Gems</h2>
+    <dl>
+      <dt>ARKWEB</dt><dd>A flat website compiler</dd>
+      <dt>ark-cli [<a href="">docs</a>]</dt><dd>Full-featured command line interface library for Ruby</dd>
+      <dt>ark-util [<a href="">docs</a>]</dt><dd>Utility library in Ruby used by other ark* gems</dd>
+    </dl>
+  </div>
+
+  <div class="software-list">
+    <h2 class="list-heading">CLI scripts</h2>
+    <dl>
+      <dt>invisibleink</dt><dd>Simple script for working with GPG-encrypted text</dd>
+      <dt>xthemes</dt><dd>Manage color themes for X</dd>
+    </dl>
+  </div>
+
+  <div class="software-list">
+    <h2 class="list-heading">GUI Applications</h2>
+    <dl>
+      <dt>batchrename</dt><dd>Batch file renaming, intended for Windows</dd>
+    </dl>
+  </div>
+  </div>
+
+</div>
+
+</div>
+
+
+
+  </body>
+
+</html>
+
