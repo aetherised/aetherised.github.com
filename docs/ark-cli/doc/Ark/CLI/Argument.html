@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class Ark::CLI::Argument - ark-cli 0.6.7.dev 853d547 Documentation</title>
+<title>class Ark::CLI::Argument - ark-cli 0.6.8 39438b2 Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
@@ -85,8 +85,6 @@
     <li ><a href="#method-c-valid_name-3F">::valid_name?</a>
     
     <li ><a href="#method-i-fulfilled-3F">#fulfilled?</a>
-    
-    <li ><a href="#method-i-given-3F">#given?</a>
     
     <li ><a href="#method-i-has_default-3F">#has_default?</a>
     
@@ -446,40 +444,6 @@ required and always have a default value of +[]+</p>
             <pre><span class="ruby-comment"># File lib/ark/cli/argument.rb, line 120</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">fulfilled?</span>
   <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@value</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">has_default?</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-i-given-3F" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">given?</span><span
-            class="method-args">()</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>True if a value was given for this argument. Default values don&#39;t
-count.</p>
-          
-          
-
-          
-          <div class="method-source-code" id="given-3F-source">
-            <pre><span class="ruby-comment"># File lib/ark/cli/argument.rb, line 125</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">given?</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@value</span>.<span class="ruby-identifier">nil?</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
