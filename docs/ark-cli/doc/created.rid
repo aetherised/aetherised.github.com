@@ -1,8 +1,0 @@
-Fri, 18 Sep 2015 11:15:15 -0400
-README.md	Tue, 08 Sep 2015 08:31:00 -0400
-lib/ark/cli.rb	Wed, 09 Sep 2015 04:34:28 -0400
-lib/ark/cli/interface.rb	Thu, 17 Sep 2015 17:38:04 -0400
-lib/ark/cli/report.rb	Thu, 10 Sep 2015 01:08:06 -0400
-lib/ark/cli/argument.rb	Thu, 17 Sep 2015 17:46:24 -0400
-lib/ark/cli/spec.rb	Thu, 17 Sep 2015 17:38:04 -0400
-lib/ark/cli/option.rb	Thu, 17 Sep 2015 17:46:24 -0400
