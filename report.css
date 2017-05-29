@@ -1,0 +1,7 @@
+.top-frame {
+  overflow: hidden;
+  width: 100%;
+}
+.age-plot, .maxk-plot {
+  float: left;
+}
