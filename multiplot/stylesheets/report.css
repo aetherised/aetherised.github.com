@@ -13,9 +13,9 @@ body {
   font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
 }
 .logo {
-  float: right;
-  margin-left: 32px;
-  margin-right: 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 .summary {
   text-align: justify;
@@ -47,18 +47,23 @@ body {
 .intro .title {
   margin-bottom: 1em;
   margin-top: 1em;
+  font-weight: normal;
 }
-.title .report {
-  font-size: 1.3em;
-  color: #303030;
-  font-family: Impact, Arial, sans-serif;
-}
-.title .subreddit {
-  font-size: 0.75em;
-  padding-left: 0.75em;
+.section {
   color: #404040;
   font-family: Impact, Arial, sans-serif;
   font-weight: normal;
+  font-size: 1.6em;
+}
+.title .report {
+  font-size: 1.3em;
+  color: #404040;
+  font-family: Impact, Arial, sans-serif;
+}
+.title .subreddit {
+  font-size: 1.1em;
+  color: #353535;
+  font-family: Impact, Arial, sans-serif;
 }
 .mid-frame {
   margin-top: 2em;
