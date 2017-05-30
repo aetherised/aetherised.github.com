@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.outer-wrapper {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4em;
+}
+.intro {
+  width: 1000px;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+.logo {
+  float: right;
+  margin-left: 32px;
+  margin-right: 16px;
+}
+.summary {
+  text-align: justify;
+  color: #191919;
+  margin-left: 50px;
+  margin-right: 276px;
+  font-size: 1.05em;
+}
+.data-text {
+  color: #454545;
+  font-weight: bold;
+}
+.data-numeric {
+  font-family: Consolas, Arial, sans-serif;
+  color: #454545;
+  font-weight: bold;
+}
+.top-frame {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 5em;
+}
+.age-plot, .maxk-plot {
+  float: left;
+}
+.age-plot {
+  margin-right: 50px;
+}
+.intro .title {
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+.title .report {
+  font-size: 1.3em;
+  color: #303030;
+  font-family: Impact, Arial, sans-serif;
+}
+.title .subreddit {
+  font-size: 0.75em;
+  padding-left: 0.75em;
+  color: #404040;
+  font-family: Impact, Arial, sans-serif;
+  font-weight: normal;
+}
+.mid-frame {
+  margin-top: 2em;
+}
