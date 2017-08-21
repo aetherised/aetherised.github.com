@@ -1,0 +1,122 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #e9e9ef;
+  font-family: Arial, sans-serif;
+}
+.header {
+  height: 12em;
+  background-color: #fafaff;
+  margin: 0;
+  padding: 1em;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.title {
+  float: left;
+}
+.main-title {
+  color: #191919;
+  margin-bottom: 0;
+  margin-top: 1.5em;
+}
+.sub-title {
+  color: #252525;
+  font-size: 1.3em;
+  font-style: italic;
+  margin-top: 0;
+  text-align: right;
+}
+.logo {
+  float: right;
+  max-height: 12em;
+}
+.menubar {
+  height: 4em;
+  background-color: #454545;
+  padding-left: 15%;
+  padding-right: 15%;
+  color: white;
+}
+.menubar a {
+  color: white;
+  text-decoration: none;
+}
+.menubar a:hover {
+  color: red;
+}
+.current a {
+  color: red !important;
+}
+.menu-items {
+  margin: 0;
+  padding: 0;
+  height: 4em;
+}
+.menu-item {
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  margin-right: 2.5em;
+  padding: 0;
+}
+.content {
+  padding-top: 4em;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.leftside {
+  float: left;
+  width: 62.5%;
+  margin-right: 2.5%;
+  font-size: 1.2em;
+  padding-bottom: 2em;
+}
+.leftside p {
+  margin-left: 3em;
+  margin-right: 3em;
+}
+.leftside h3 {
+  margin-left: 2.6em;
+  margin-right: 2.6em;
+  margin-top: 2em;
+}
+.rightside {
+  float: right;
+  width: 32.5%;
+  margin-left: 2.5%;
+}
+.leftside, .info-1, .info-2 {
+  background-color: #fafaff;
+}
+.info-1 {
+  height: 15em;
+  text-align: center;
+  padding-top: 1.5em;
+  font-size: 1.1em;
+}
+.info-2 {
+  margin-top: 2em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  font-size: 1.1em;
+}
+.footer {
+  clear: both;
+  text-align: center;
+  padding-top: 4em;
+  padding-bottom: 3em;
+  line-height: 1.5em;
+}
+.textmark {
+  font-variant: small-caps;
+  text-decoration: none;
+  color: #6e7fd2;
+}
+.textmark:hover {
+  text-decoration: underline;
+}
