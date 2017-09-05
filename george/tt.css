@@ -92,16 +92,40 @@ body {
   background-color: #fafaff;
 }
 .info-1 {
-  height: 15em;
+  height: 17em;
   text-align: center;
-  padding-top: 1.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 0.5em;
   font-size: 1.1em;
+}
+.info-1 p {
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+}
+.info-1 ul {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  list-style: none;
+  text-align: left;
+}
+.info-1 li {
+  line-height: 1.2em;
+}
+.info-subtitle {
+  font-size: 0.8em;
+}
+.info-number {
+  font-size: 1.25em;
+}
+.info-appointments {
+  font-size: 0.85em;
 }
 .info-2 {
   margin-top: 2em;
-  padding-left: 2.5em;
-  padding-right: 2.5em;
-  padding-top: 1.5em;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  padding-top: 0.5em;
   padding-bottom: 1.5em;
   font-size: 1.1em;
 }
