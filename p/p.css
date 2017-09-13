@@ -1,0 +1,172 @@
+/*
+font-family: 'Quicksand', sans-serif;
+font-family: 'Kanit', sans-serif;
+font-family: 'Catamaran', sans-serif;
+font-family: 'Yantramanav', sans-serif;
+font-family: 'Londrina Outline', cursive;
+font-family: 'Almendra Display', cursive;
+*/
+
+body {
+  margin: 0;
+}
+.top-bar {
+  background-color: #6e7fd2;
+  height: 40px;
+  font-size: 25px;
+  font-family: 'Kanit', sans-serif;
+  color: white;
+  position: sticky;
+  top: 0;
+}
+.textmark {
+  height: 40px;
+  font-family: 'Yantramanav', sans-serif;
+  display: block;
+  float: left;
+  line-height: 40px;
+}
+.ae {
+  color: #191919;
+  background-color: white;
+  display: inline-block;
+  height: 40px;
+  padding: 0 5px 0 5px;
+  margin-right: 5px;
+  font-weight: bold;
+  font-family: 'Yantramanav', sans-serif;
+}
+.parenthetical {
+  display: block;
+  font-size: 0.6em;
+  line-height: 18px;
+  height: 40px;
+  float: left;
+  margin-left: 2em;
+}
+.contact {
+}
+.about-link {
+  font-family: 'Quicksand', sans-serif;
+  display: block;
+  padding: 0 2.5px 0 2.5px;
+  font-size: 0.6em;
+  float: right;
+  height: 40px;
+  line-height: 40px;
+}
+.border {
+  display: inline-block;
+  width: 250px;
+  height: 300px;
+  margin: 20px;
+}
+.badges {
+  padding-top: 40px;
+}
+.badge {
+  font-family: 'Kanit', sans-serif;
+  color: white;
+  width: 250px;
+  height: 300px;
+  clip-path: polygon(0px 0px, 200px 0px, 250px 50px, 250px 300px, 0px 300px);
+  font-size: 20px;
+  position: relative;
+  top: -60px;
+  display: table-cell;
+  vertical-align: bottom;
+  text-align: right;
+}
+.icon {
+  display: block;
+  color: black;
+  position: relative;
+  left: 198px;
+  height: 50px;
+  width: 50px;
+  z-index: 100;
+  text-align: right;
+  top: -18px;
+  font-size: 35px;
+  font-family: Georgia, serif;
+}
+.inset {
+  display: inline-block;
+  position: relative;
+  left: 2.5px;
+  top: 2.5px;
+  width: 260px;
+  height: 260px;
+  background-color: #fefefe;
+  clip-path: polygon(0px 0px, 190px 0px, 245px 55px, 245px 260px, 0px 260px);
+  text-align: left;
+}
+.chloroform-logo {
+  width: 100px;
+  height: 100px;
+  margin: 72.5px;
+}
+.inner-body {
+  width: 900px;
+  margin: 0 auto 0 auto;
+}
+.c1 .badge:hover, .c2 .badge:hover {
+  background-color: #252525;
+}
+.c1:hover .icon, .c2:hover .icon {
+  color: #252525;
+}
+.inset:hover {
+}
+.label {
+  margin: 10px;
+  padding-right: 10px;
+}
+ul {
+  margin-left: 0;
+  padding-left: 0;
+  margin-top: 34px;
+}
+li {
+  padding-top: 0.2em;
+  padding-left: 0.5em;
+}
+.c1 li {
+  border-bottom: 2.5px solid #6e7fd2;
+  list-style: none;
+}
+.c1 .badge {
+  background-color: #6e7fd2;
+}
+.c2 .badge {
+  background-color: #de2657;
+}
+.c2 li {
+  border-bottom: 2.5px solid #de2657;
+  list-style: none;
+}
+.icon {
+  visibility: hidden;
+}
+.border:hover .icon {
+  visibility: visible;
+}
+.border:hover .inset {
+  color: white;
+}
+.c1:hover .inset {
+  background-color: #6e7fd2;
+}
+.c2:hover .inset {
+  background-color: #de2657;
+}
+.c1 .inset, .c1 .icon {
+  color: #6e7fd2;
+}
+.c2 .inset, .c2 .icon {
+  color: #de2657;
+}
+.label-small {
+  font-size: 0.5em;
+  font-family: 'Quicksand', sans-serif;
+}
