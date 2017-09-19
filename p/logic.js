@@ -109,7 +109,7 @@ var return_to_root = function() {
   fs(parent);
   var nurl = window.location.origin + window.location.pathname;
   console.log(nurl);
-  window.history.pushState({}, "", nurl);
+  history.pushState({"source": "", "anchor": ""}, nurl, nurl);
   console.log(window.location);
 }
 
@@ -121,7 +121,7 @@ var go_up = function() {
   }
 }
 
-var activate_card = function(s, a) {
+var activate_card = function(s, a, restore) {
   if (s) {
     var parent = $("[aeparent="+s+"]");
     if (!parent.hasClass("fullscreen")) {
@@ -131,7 +131,9 @@ var activate_card = function(s, a) {
     var base = window.location.href.split("/").slice(0,-1).join("/");
     var nurl = "#" + anchor_path(s, a);
     console.log(nurl);
-    window.history.pushState({}, "", nurl);
+    if (!restore) {
+      history.pushState({"source": s, "anchor": a}, nurl, nurl);
+    }
   }
 }
 
@@ -158,5 +160,11 @@ var init_content = function() {
   var [r, s, a] = window.location.hash.slice(1).split("/");
   activate_card(s, a);
 }
+
+window.onpopstate = function(e) {
+  console.log(e);
+  console.log(history);
+  activate_card(e.state.source, e.state.anchor, true);
+};
 
 $(document).ready(init_content);

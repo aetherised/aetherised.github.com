@@ -503,7 +503,8 @@ a {
 }
 .label .label-controls .button {
   float: left;
-  margin-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .label .label-text {
   float: right;
