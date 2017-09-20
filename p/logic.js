@@ -34,6 +34,7 @@ var fs = function(obj) {
       "height": ""
     });
     obj.find('.badge .label .label-controls').css({"display": "none"});
+    $(".top-bar").removeClass("tinted");
   } else {
     var lh = obj.find('.badge .label').height();
     obj.addClass("fullscreen");
@@ -53,11 +54,12 @@ var fs = function(obj) {
       "height": ih
     });
     obj.find('.badge .inset .contents').css({
-      "height": ih
+      "height": ih - lh
     });
     obj.find('.badge .inset .inset-body').addClass("inner-body");
     obj.find('.badge .label .label-body').addClass("inner-body");
     obj.find('.badge .label .label-controls').css({"display": "block"});
+    $(".top-bar").addClass("tinted");
   }
 }
 
@@ -67,10 +69,28 @@ var hide_contents = function(s) {
   source.removeClass("displayed");
 }
 
+var load_content = function(s, a) {
+  $.ajax( anchor_path(s, a) )
+    .done(function() {
+      alert( "success" );
+    })
+    .fail(function() {
+      alert( "error" );
+    })
+    .always(function() {
+      alert( "complete" );
+    });
+}
+
 var toggle_contents = function(s, a) {
   var source  = $("[aesource="+s+"]");
   var anchors = source.find("[aeid]");
   var active  = source.find("[aeid="+a+"]");
+  console.log(active.attr("aeid"));
+  if (active.length === 0) {
+    console.log("trying to toggle unloaded content");
+    load_content(s, a);
+  }
   if (a) {
     anchors.css({"display": "none"});
     active.css({"display": "block"});
@@ -98,6 +118,15 @@ var current_anchor = function() {
   return a;
 }
 
+var current_anchor_obj = function() {
+  var [r, s, a] = parse_hash();
+  if (a) {
+    return $("[aesource="+s+"] [aeid="+a+"]");
+  } else {
+    return false;
+  }
+}
+
 var current_source = function() {
   var [r, s, a] = parse_hash();
   return s;
@@ -111,9 +140,7 @@ var return_to_root = function(restore) {
   fs(parent);
   var nurl = window.location.origin + window.location.pathname;
   console.log(nurl);
-  if (!restore) {
-    history.pushState({"source": "", "anchor": ""}, nurl, nurl);
-  }
+  change_state({"source": "", "anchor": ""}, nurl, restore);
   console.log(window.location);
 }
 
@@ -123,6 +150,54 @@ var go_up = function() {
   } else if (current_source()) {
     return_to_root();
   }
+}
+
+var seperate_top_bar = function() {
+  var bc = $(".top-bar").css("background-color");
+  var cc = $(".fullscreen")
+  if (cc) {
+    cc = cc.find(".inset").css("background-color");
+    console.log("got cc: "+cc+" bc: "+bc)
+    if (bc == cc) {
+      console.log("same color")
+      $(".top-bar").addClass("seperated");
+    } else {
+      $(".top-bar").removeClass("seperated");
+    }
+  } else {
+    $(".top-bar").removeClass("seperated");
+  }
+}
+
+var clear_textmark_color = function() {
+  var ae  = $(".ae");
+  var cat = ae.attr("aesetcat");
+  if (cat) {
+    ae.removeClass(cat);
+    ae.attr("aesetcat", "");
+  }
+}
+
+var adjust_textmark_color = function() {
+  var fsc = $(".fullscreen");
+  if (fsc) {
+    clear_textmark_color();
+    var c = fsc.attr("aecategory");
+    console.log("fullscreen! "+c)
+    $(".ae").addClass("tm-c"+c);
+    $(".ae").attr("aesetcat", "tm-c"+c)
+  } else {
+    clear_textmark_color();
+  }
+}
+
+var change_state = function(data, url, restore) {
+  if (!restore) {
+    history.pushState(data, url, url);
+  }
+  adjust_card_title();
+  seperate_top_bar();
+  adjust_textmark_color();
 }
 
 var activate_card = function(s, a, restore) {
@@ -135,10 +210,23 @@ var activate_card = function(s, a, restore) {
     var base = window.location.href.split("/").slice(0,-1).join("/");
     var nurl = "#" + anchor_path(s, a);
     console.log(nurl);
-    if (!restore) {
-      history.pushState({"source": s, "anchor": a}, nurl, nurl);
-    }
+    change_state({"source": s, "anchor": a}, nurl, restore);
   }
+}
+
+var adjust_card_title = function() {
+  if (current_anchor()) {
+    var title = current_anchor_obj().attr("aetitle");
+    $(".fullscreen .badge .label .subtitle").html('<span class="icon ion-arrow-right-b seperator"></span>'+title);
+  } else if (current_source()) {
+    $(".fullscreen .badge .label .subtitle").html('<span class="icon ion-arrow-right-b seperator"></span><span class="icon ion-asterisk"></span>');
+  } else {
+    $(".badge .label .subtitle").html('');
+  }
+}
+
+var request = function(s, a) {
+
 }
 
 $('.full-link').click(function() {
@@ -161,7 +249,7 @@ $("[aedest]").click(function() {
 });
 
 var init_content = function() {
-  var [r, s, a] = window.location.hash.slice(1).split("/");
+  var [r, s, a] = parse_hash();
   activate_card(s, a);
 }
 

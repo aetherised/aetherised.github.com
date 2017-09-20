@@ -6,6 +6,21 @@ font-family: 'Yantramanav', sans-serif;
 font-family: 'Londrina Outline', cursive;
 font-family: 'Almendra Display', cursive;
 */
+.tm-c1 {
+  background-color: #6e7fd2 !important;
+  color: #fafafa !important;
+}
+.c1 ::-webkit-scrollbar {
+  position: absolute;
+  right: 0;
+  width: 15px;
+}
+.c1 ::-webkit-scrollbar-track {
+  background-color: #4c5db0;
+}
+.c1 ::-webkit-scrollbar-thumb {
+  background-color: #90a1f4;
+}
 .c1 .badge {
   background-color: #6e7fd2;
 }
@@ -17,6 +32,9 @@ font-family: 'Almendra Display', cursive;
 }
 .c1 .inset li:before {
   color: #d4e5ff;
+}
+.c1 .icon {
+  color: #6e7fd2;
 }
 .c1:hover .inset {
   background-color: #6e7fd2;
@@ -33,6 +51,21 @@ font-family: 'Almendra Display', cursive;
 .c1.fullscreen .inset li:before {
   color: #4c5db0;
 }
+.tm-c2 {
+  background-color: #de2657 !important;
+  color: #fafafa !important;
+}
+.c2 ::-webkit-scrollbar {
+  position: absolute;
+  right: 0;
+  width: 15px;
+}
+.c2 ::-webkit-scrollbar-track {
+  background-color: #bc0435;
+}
+.c2 ::-webkit-scrollbar-thumb {
+  background-color: #ff4879;
+}
 .c2 .badge {
   background-color: #de2657;
 }
@@ -44,6 +77,9 @@ font-family: 'Almendra Display', cursive;
 }
 .c2 .inset li:before {
   color: #ff8cbd;
+}
+.c2 .icon {
+  color: #de2657;
 }
 .c2:hover .inset {
   background-color: #de2657;
@@ -60,6 +96,21 @@ font-family: 'Almendra Display', cursive;
 .c2.fullscreen .inset li:before {
   color: #bc0435;
 }
+.tm-c3 {
+  background-color: #dfae10 !important;
+  color: #fafafa !important;
+}
+.c3 ::-webkit-scrollbar {
+  position: absolute;
+  right: 0;
+  width: 15px;
+}
+.c3 ::-webkit-scrollbar-track {
+  background-color: #bd8c00;
+}
+.c3 ::-webkit-scrollbar-thumb {
+  background-color: #ffd032;
+}
 .c3 .badge {
   background-color: #dfae10;
 }
@@ -71,6 +122,9 @@ font-family: 'Almendra Display', cursive;
 }
 .c3 .inset li:before {
   color: #ffff76;
+}
+.c3 .icon {
+  color: #dfae10;
 }
 .c3:hover .inset {
   background-color: #dfae10;
@@ -107,6 +161,10 @@ a {
   width: 100%;
   transition: height 0.5s ease-in-out;
   overflow: hidden;
+}
+.top-bar.tinted,
+.top-bar.tinted .top-bar-contents {
+  background-color: #252525;
 }
 .top-bar .top-bar-contents {
   background-color: #6e7fd2;
@@ -277,6 +335,13 @@ a {
     padding-bottom: 3px;
     font-size: 0.55em;
   }
+  .fullscreen .badge .inset ul {
+    width: 180px;
+  }
+  .fullscreen .badge .inset .contents {
+    width: 720px;
+    margin-left: 180px;
+  }
 }
 @media (min-width: 800px) and (max-width: 999px) {
   .inner-body {
@@ -328,6 +393,13 @@ a {
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 0.45em;
+  }
+  .fullscreen .badge .inset ul {
+    width: 140px;
+  }
+  .fullscreen .badge .inset .contents {
+    width: 560px;
+    margin-left: 140px;
   }
 }
 @media (max-width: 799px) {
@@ -384,6 +456,13 @@ a {
   .contact-info {
     display: none;
   }
+  .fullscreen .badge .inset ul {
+    width: 100px;
+  }
+  .fullscreen .badge .inset .contents {
+    width: 400px;
+    margin-left: 100px;
+  }
 }
 .badges {
   padding-top: 70px;
@@ -422,17 +501,18 @@ a {
 }
 .border.fullscreen .badge .inset {
   width: 100%;
+  overflow-y: scroll;
+}
+.border.fullscreen .badge .inset .inset-body {
+  overflow: visible;
 }
 .border.fullscreen .badge .inset ul {
-  float: left;
-  width: 20%;
   padding-top: 30px;
+  position: fixed;
 }
 .border.fullscreen .badge .inset .contents {
   float: left;
-  width: 80%;
   padding-top: 30px;
-  overflow: scroll;
 }
 .border.fullscreen .badge .inset .contents p,
 .border.fullscreen .badge .inset .contents h2 {
@@ -443,6 +523,12 @@ a {
 }
 .border.fullscreen .inset {
   color: #efefef;
+}
+.border.fullscreen .badge .label .label-text {
+  padding-right: 0;
+}
+.border.fullscreen .badge .label .label-small {
+  padding-right: 5px;
 }
 .badge {
   font-family: Kanit, Arial, sans-serif;
@@ -509,7 +595,18 @@ a {
 .label .label-text {
   float: right;
   padding-right: 5px;
-  display: inline-block;
+  display: block;
+}
+.label .subtitle {
+  user-select: text;
+  -moz-user-select: text;
+  -webkit-user-select: text;
+  -ms-user-select: text;
+  cursor: text;
+}
+.label .subtitle .seperator {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 .label .label-small {
   font-family: Quicksand, Arial, sans-serif;
