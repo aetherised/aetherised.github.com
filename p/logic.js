@@ -103,13 +103,16 @@ var current_source = function() {
   return s;
 }
 
-var return_to_root = function() {
-  hide_contents(current_source());
-  var parent = $("[aeparent="+current_source()+"]");
+var return_to_root = function(restore) {
+  var source = $(".fullscreen").attr("aeparent");
+  hide_contents(source);
+  var parent = $("[aeparent="+source+"]");
   fs(parent);
   var nurl = window.location.origin + window.location.pathname;
   console.log(nurl);
-  history.pushState({"source": "", "anchor": ""}, nurl, nurl);
+  if (!restore) {
+    history.pushState({"source": "", "anchor": ""}, nurl, nurl);
+  }
   console.log(window.location);
 }
 
@@ -164,7 +167,13 @@ var init_content = function() {
 window.onpopstate = function(e) {
   console.log(e);
   console.log(history);
-  activate_card(e.state.source, e.state.anchor, true);
+  if (e.state.source != "") {
+    console.log("restoring card")
+    activate_card(e.state.source, e.state.anchor, true);
+  } else {
+    console.log("restoring root")
+    return_to_root(true);
+  }
 };
 
 $(document).ready(init_content);
