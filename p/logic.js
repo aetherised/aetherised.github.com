@@ -70,7 +70,7 @@ var hide_contents = function(s) {
 }
 
 var load_content = function(s, a) {
-  $.ajax( anchor_path(s, a) )
+  $.ajax( anchor_path(s, a) + ".json.md" )
     .done(function() {
       alert( "success" );
     })
