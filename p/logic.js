@@ -105,6 +105,7 @@ var current_source = function() {
 
 var return_to_root = function(restore) {
   var source = $(".fullscreen").attr("aeparent");
+  console.log("fs card: "+source)
   hide_contents(source);
   var parent = $("[aeparent="+source+"]");
   fs(parent);
