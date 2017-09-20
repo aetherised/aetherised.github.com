@@ -70,15 +70,15 @@ var hide_contents = function(s) {
 }
 
 var load_content = function(s, a) {
-  $.ajax( anchor_path(s, a) + ".json.md" )
+  $.ajax(anchor_path(s, a) + ".json.md")
     .done(function() {
-      alert( "success" );
+      console.log( "success" );
     })
     .fail(function() {
-      alert( "error" );
+      console.log( "error" );
     })
     .always(function() {
-      alert( "complete" );
+      console.log( "complete" );
     });
 }
 
